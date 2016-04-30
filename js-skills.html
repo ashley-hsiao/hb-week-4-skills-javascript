@@ -125,10 +125,10 @@
 <script>
   // code here for above-problem
   var changeTextButton = document.getElementById("change-hello-to-goodbye-button");
-  var message = document.getElementById("message-to-change");
+  var messageToChange = document.getElementById("message-to-change");
 
   var goodbyeClick = function(evt) {
-    message.innerText = "goodbye";
+    messageToChange.innerText = "goodbye";
   };
 
   changeTextButton.addEventListener('click', goodbyeClick);
@@ -162,14 +162,14 @@
 
 <script>
   // code here for above problem
-  var preventFormButton = document.getElementById("prevent-form-submission-button");
+  var preventFormSubmissionForm = document.getElementById("prevent-form-submission-form");
 
-  var alertClickNoForm = function(evt) {
+  var alertNoFormSubmission = function(evt) {
     alert("This is just an alert!");
     evt.preventDefault();
   };
 
-  preventFormButton.addEventListener('click', alertClickNoForm);
+  preventFormSubmissionForm.addEventListener('submit', alertNoFormSubmission);
 
 </script>
 
