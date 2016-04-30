@@ -171,6 +171,12 @@
 
   preventFormSubmissionForm.addEventListener('submit', alertNoFormSubmission);
 
+  // Initially, defined variable for the button and 'click' was used as the event handler
+  // But the 'submit' event handler would not work for some reason
+  // Realized that variable needs to be defined for the form, not just the button
+  // Corrected variable to the form and used 'submit' as the event handler
+  // This way information still gets submitted, but does not take user to the action route
+
 </script>
 
 <div class="hint">
