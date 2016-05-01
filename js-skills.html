@@ -232,7 +232,7 @@
     //   newMsg += msg[i];
     // }
     // But we want to reverse the string, so instead need to loop from end to start
-    
+
     // Loop through starting at the end of msg and bind to newMsg
     // Decrement index until index 0 reached, so i > -1
     var lastCharIndex = msg.length - 1;
@@ -272,11 +272,18 @@
 
 <script>
   // // code here for above problem
-  var alertMe = function (evt) {
-    alert("You found me!");
-  };
+  // var alertMe = function(evt) {
+  //   alert("You found me!");
+  // };
 
-  $('tricky-to-find').click()
+  // $('.tricky-to-find').click(alertMe);
+
+  // Same code as above, but using anonymous function
+  $('.tricky-to-find').click(function(evt) {
+    alert("You found me!");
+  });
+
+
 </script>
 
 <div class="hint">
