@@ -313,7 +313,7 @@
   // put your code here
   // var changeImage = function(evt) {
   //   $('#kittenz-rule').attr("src", "http://d30nr4b2k915ua.cloudfront.net/wp-content/uploads/2015/11/18131428/SneakersSocialDog.png");
-  // }
+  // };
 
   // $('#kittenz-rule').dblclick(changeImage);
 
@@ -322,7 +322,7 @@
     $('#kittenz-rule').attr("src", "http://d30nr4b2k915ua.cloudfront.net/wp-content/uploads/2015/11/18131428/SneakersSocialDog.png");
   });
 
-  
+
 </script>
 
 <div class="hint">
@@ -356,6 +356,33 @@
 
 <script>
   // put your code here
+
+  // Display image right away when called
+  // var showImage = function(evt) {
+  //   $('#cute-porcupine-image').attr("style", "display: visible");
+  // };
+  // No need for showImage() when we can fade in the image per below
+
+  // Slowly fade in image (3 seconds)
+  var fadeInImage = function(evt) {
+    $('#cute-porcupine-image').fadeIn(3000);
+  };
+
+  // Call fadeInImage() after 1 second
+  // setTimeout(fadeInImage, 1000);
+
+  // Click button to make image slowly fade in after 1 second
+  $('#make-a-porcupine').click(function(evt) {
+    setTimeout(fadeInImage, 1000);
+  });
+
+
+  // $('#make-a-porcupine').click(function(evt) {
+  //   $('#cute-porcupine-image').attr("style", "display: visible");
+
+  //   fadeIn(1000);
+  // });
+
 </script>
 
 <div class="hint">
