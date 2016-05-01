@@ -227,12 +227,13 @@
     var msg = "Porcupines are cute";
     var newMsg = "";
 
-    // // Loop through msg and bind each character to newMsg (start to end)
+    // // This will loop through msg and bind each character to newMsg (start to end)
     // for (var i = 0; i < msg.length; i++) {
     //   newMsg += msg[i];
     // }
-
-    // Now loop through starting at the end of msg (end to start) and bind to newMsg
+    // But we want to reverse the string, so instead need to loop from end to start
+    
+    // Loop through starting at the end of msg and bind to newMsg
     // Decrement index until index 0 reached, so i > -1
     var lastCharIndex = msg.length - 1;
 
@@ -256,6 +257,8 @@
 <p>You should use jQuery for these parts.</p>
 <p>We didn't include jQuery in this document, though&mdash;so your first task is to include it!</p>
 
+<!-- Adding jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
 
 
 <h3>Finding the Button</h3>
@@ -268,7 +271,12 @@
 </fieldset>
 
 <script>
-  // code here for above problem
+  // // code here for above problem
+  var alertMe = function (evt) {
+    alert("You found me!");
+  };
+
+  $('tricky-to-find').click()
 </script>
 
 <div class="hint">
