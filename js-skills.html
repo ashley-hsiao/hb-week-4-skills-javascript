@@ -428,13 +428,13 @@
 
 <script>
   // put your code here
-  function answerFood(evt) {
+  var answerFood = function(evt) {
     evt.preventDefault();
 
     var favFood = $('#favorite-food-input').val();
 
     $('#agreeable-text').html("I like " + favFood + " too!");
-  }
+  };
 
   $('#agreeable-form').on('submit', answerFood);
 
@@ -467,6 +467,11 @@
 
 <script>
   // put your code here
+
+
+
+  $('#play-guessing-game').on('click', startGame);
+
 </script>
 
 <div class="hint">
