@@ -98,6 +98,7 @@
 
 <script>
   // code here for above problem
+
   var popupButton = document.getElementById("popup-alert-button");
 
   var alertClick = function(evt) {
@@ -124,6 +125,7 @@
 
 <script>
   // code here for above-problem
+
   var changeTextButton = document.getElementById("change-hello-to-goodbye-button");
   var messageToChange = document.getElementById("message-to-change");
 
@@ -162,6 +164,7 @@
 
 <script>
   // code here for above problem
+
   var preventFormSubmissionForm = document.getElementById("prevent-form-submission-form");
 
   var alertNoFormSubmission = function(evt) {
@@ -223,6 +226,8 @@
 //  var button = document.getElementById('reverse-string-button');
 //  button.addEventListener('click', reverseString);
 
+  // MY SOLUTION
+
   function reverseString() {
     var msg = "Porcupines are cute";
     var newMsg = "";
@@ -245,7 +250,9 @@
   }
 
   var button = document.getElementById('reverse-string-button');
+
   button.addEventListener('click', reverseString);
+
 </script>
 
 
@@ -272,6 +279,7 @@
 
 <script>
   // // code here for above problem
+
   // var alertMe = function(evt) {
   //   alert("You found me!");
   // };
@@ -311,6 +319,7 @@
 
 <script>
   // put your code here
+
   // var changeImage = function(evt) {
   //   $('#kittenz-rule').attr("src", "http://d30nr4b2k915ua.cloudfront.net/wp-content/uploads/2015/11/18131428/SneakersSocialDog.png");
   // };
@@ -428,6 +437,7 @@
 
 <script>
   // put your code here
+
   var answerFood = function(evt) {
     evt.preventDefault();
 
@@ -435,6 +445,7 @@
 
     $('#agreeable-text').html("I like " + favFood + " too!");
   };
+
 
   $('#agreeable-form').on('submit', answerFood);
 
@@ -506,6 +517,7 @@
 
   };
 
+
   $('#play-guessing-game').on('click', startGame);
 
 </script>
@@ -549,18 +561,57 @@
 <script>
   // put your code here
 
-  $('#guessing-game-2-form').on('submit', playGame2);
+  // NEED TO FIX
+  // Number regenerates each time the guess is submitted...
+  // Need to figure out how to do a while loop for this
 
-
-var answerFood = function(evt) {
+  var startGame2 = function(evt) {
     evt.preventDefault();
 
-    var favFood = $('#favorite-food-input').val();
+    var game2RandomNumber = Math.floor(Math.random() * 100);
 
-    $('#agreeable-text').html("I like " + favFood + " too!");
+    var game2Guess = $('#number-guessed').val();
+
+    if (isNaN(game2Guess) || game2Guess < 1 || game2Guess > 100) {
+        $('#number-guessing-msg').html("Input not valid. Try again.");
+    }
+
+    else if (game2Guess === game2RandomNumber) {
+      $('#number-guessing-msg').html("Congrats! You guessed the number correctly.");
+
+      // // STILL NEED TO CHECK
+      // // Need to disable game once user gets the right number
+      // //  Game is restarted when they press "Play!"
+      // $('#number-guessed').disabled = true;
+      // $('#try-this-number').disabled = true;
+    } 
+
+    else if (game2Guess < game2RandomNumber) {
+      $('#number-guessing-msg').html("Sorry, that's too low. Try again.");
+    }
+
+    else {
+      $('#number-guessing-msg').html("Sorry, that's too high. Try again.");
+    }
+
   };
 
-  $('#agreeable-form').on('submit', answerFood);
+
+  var enableGame2 = function(evt) {
+    // .removeAttr('disabled') enables the field and button
+    $('#number-guessed').removeAttr('disabled');
+    $('#try-this-number').removeAttr('disabled');
+
+    // // Not sure why but the below code doesn't work to change the disabled property???
+    // $('#number-guessed').disabled = false;
+    // $('#try-this-number').disabled = false;
+
+    $('#guessing-game-2-form').on('submit', startGame2);
+  };
+
+
+  $('#play-guessing-game-2').on('click', enableGame2);
+
 
 </script>
 
@@ -599,6 +650,11 @@ var answerFood = function(evt) {
     var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
   // put the rest of your code here
+
+
+
+  $('#make-prime-boxes').on('click', generatePrimes);
+
 </script>
 
 
