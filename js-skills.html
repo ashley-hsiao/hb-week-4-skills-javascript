@@ -468,37 +468,45 @@
 <script>
   // put your code here
 
-  // // NOT COMPLETE. NEED TO FIX THE PROMPT/ALERT WINDOWS
+  var startGame = function(evt) {
 
-  // var startGame = function(evt) {
-  //   var playing = true;
+    var playing = true;
 
-  //   while (playing) {
-  //     var randomNumber = Math.floor(Math.random() * 100);
+    // Generate a random number
+    var randomNumber = Math.floor(Math.random() * 100);
 
-  //     var guess = prompt("Guess a number between 1-100");
+    // Continue prompting until user gets the number or quits the game
+    while (playing) {
 
-  //     if (isNaN(guess) || guess < 1 || guess > 100) {
-  //       prompt("Input not valid. Please enter a number between 1-100.");
-  //     }
-  //     else if (guess === randomNumber) {
-  //       alert("Congrats! You guessed the number correctly.");
-  //     } 
-  //     else if (guess < randomNumber) {
-  //       prompt("Sorry, that's too low. Try again.");
-  //     }
-  //     else {
-  //       prompt("Sorry, that's too high. Try again.");
-  //     }
+      var guess = prompt("Guess a number between 1-100.");
 
-  //     playing = confirm("Press OK to keep playing or Cancel to quit");
-  //   }
+      guess = Number(guess)
 
-  //   alert("Goodbye!");
+      // NEED TO CHECK why this pops up when user clicks cancel
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        alert("Input not valid. Try again.");
+      }
 
-  // };
+      else if (guess === randomNumber) {
+        alert("Congrats! You guessed the number correctly.");
+        playing = confirm("Press OK to keep playing or Cancel to quit");
+      } 
 
-  // $('#play-guessing-game').on('click', startGame);
+      else if (guess < randomNumber) {
+        alert("Sorry, that's too low. Try again.");
+      }
+
+      else {
+        alert("Sorry, that's too high. Try again.");
+      }
+      
+    }
+
+    alert("Goodbye! Thanks for playing!");
+
+  };
+
+  $('#play-guessing-game').on('click', startGame);
 
 </script>
 
