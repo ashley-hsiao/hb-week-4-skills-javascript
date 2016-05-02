@@ -480,7 +480,7 @@
 
       var guess = prompt("Guess a number between 1-100.");
 
-      guess = Number(guess)
+      guess = Number(guess);
 
       // NEED TO CHECK why this pops up when user clicks cancel
       if (isNaN(guess) || guess < 1 || guess > 100) {
@@ -548,6 +548,20 @@
 
 <script>
   // put your code here
+
+  $('#guessing-game-2-form').on('submit', playGame2);
+
+
+var answerFood = function(evt) {
+    evt.preventDefault();
+
+    var favFood = $('#favorite-food-input').val();
+
+    $('#agreeable-text').html("I like " + favFood + " too!");
+  };
+
+  $('#agreeable-form').on('submit', answerFood);
+
 </script>
 
 
